@@ -1,15 +1,33 @@
-/*
+/*  1.
     @func getMiddle
     @param {array} arr
     @return {array}
     @desc - get the middle item of an array
             if even number of elements, return the middle TWO items
             
-    @example - getMiddle([1,2,3); // [3]
+    @example - getMiddle([1,2,3); // [2]
                getMiddle([1,2,3,4]); // [2,3]
 */
 
-/*
+const getMiddle = arr => { 
+    let middleItem = Math.floor(arr.length / 2);
+
+    if(arr.length % 2 === 0){
+         return arr.slice(middleItem - 1, middleItem + 1)}
+    
+    return arr.slice(middleItem, middleItem + 1);
+
+    }
+
+
+console.log('Problem 1')
+console.log(getMiddle([1,2,3]))
+console.log(getMiddle([1,2,3,4])) 
+console.log(getMiddle([1,2,3,4,5,6])) 
+console.log('_____________')
+
+
+/*  2.
     @func addToMiddle
     @param {array} arr
     @param {anything} element
@@ -20,6 +38,32 @@
     @example - addToMiddle([1,2,3], 0); // [1,2,0,3];
                addToMiddle([1,2,3,4], 0); // [1,2,0,3,4]
 */
+const addToMiddle = (arr,anything) => {
+    const middleIndex = Math.ceil(arr.length / 2);
+    const firstHalfofArray = arr.slice(0,middleIndex);
+    const secondHalfofArray = arr.slice(middleIndex);
+    
+
+    let newFirstHalf = firstHalfofArray.push(anything);
+    let newArr = firstHalfofArray.concat(secondHalfofArray);
+    return newArr;
+
+//newArr;
+}
+
+console.log('Problem 2')
+console.log(addToMiddle([1,2,3], 0)) //[1,2,0,3]
+console.log(addToMiddle([1,2,3,4], 0))  //[1,2,0,3,4]
+console.log('_____________')
+
+// const middleIndex = Math.ceil(arr1.length / 2);
+// const firstHalf = arr1.slice(0, middleIndex);
+// const secondHalf = arr1.slice(middleIndex);
+
+// let firstHalfArray = firstHalf.concat(arr2);
+// let secondHalfArray = firstHalfArray.concat(secondHalf);
+
+// return secondHalfArray;
 
 /*
     @func hasAtSymbol
